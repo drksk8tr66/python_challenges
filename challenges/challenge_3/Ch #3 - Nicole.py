@@ -34,7 +34,7 @@ def main():
     cipher = ['Y', 'P', 'L', 'T', 'A', 'V', 'K', 'R', 'E', 'Z', 'G', 'M', 'S', 'H', 'U', 'B', 'X', 'N', 'C', 'D', 'I',
               'J', 'F', 'Q', 'O', 'W']
 
-    print('Enter the message you would like to encrypt/decrypt.  When finished, press Enter, then CTRL+D')
+    print('Enter the message you would like to encrypt/decrypt.  When finished, press Enter, then CTRL+D.')
     message = list(sys.stdin.read().upper())
     print('\n')
     print('Encrypted message: ', encrypt(alphabet, cipher, message))
