@@ -16,7 +16,12 @@ class Crypto:
     def decode(self, msg=''):
 	    return msg.translate(str.maketrans(self.cipher, self.alpha))
 
+
+		
 def read_msg(filepath=''):
+    '''
+    Use this to read the secrete message
+    '''
     lines = []
     try:
         secret_msg = open(filepath)
