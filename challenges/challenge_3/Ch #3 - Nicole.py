@@ -3,6 +3,8 @@ Caesar Cypher
 https://www.reddit.com/r/dailyprogrammer/comments/pkw2m/2112012_challenge_3_easy/
 '''
 
+import sys  # This is used so we can accept multiline input
+
 
 def encrypt(a=[], c=[], m=[]):
     n = ''
@@ -32,8 +34,9 @@ def main():
     cipher = ['Y', 'P', 'L', 'T', 'A', 'V', 'K', 'R', 'E', 'Z', 'G', 'M', 'S', 'H', 'U', 'B', 'X', 'N', 'C', 'D', 'I',
               'J', 'F', 'Q', 'O', 'W']
 
-    print('Enter the message you would like to encrypt/decrypt.')
-    message = list(input().upper())
+    print('Enter the message you would like to encrypt/decrypt.  When finished, press Enter, then CTRL+D.')
+    message = list(sys.stdin.read().upper())
+    print('\n')
     print('Encrypted message: ', encrypt(alphabet, cipher, message))
     print('Decrypted message: ', decrypt(alphabet, cipher, message))
 

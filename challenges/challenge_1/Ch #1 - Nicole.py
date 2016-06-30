@@ -13,7 +13,7 @@ def ask_input():
 
 
 def store_file(n, a, u):
-    f = open('Python Challenge #1.txt', 'w')
+    f = open('Ch #1 - Nicole.txt', 'w')
     f.write('Your name is %s, you are %s years old, and your username is %s.' % (n, a, u))
 
 
