@@ -1,6 +1,7 @@
 import argparse
 import sys
 
+
 class Crypto:
     '''
     A wrapper for the maketrans function used in our context 
@@ -9,7 +10,7 @@ class Crypto:
         self.alpha = alphabet
         self.cipher = cipher
         return		
-	
+
     def encode(self, msg=''):
         return msg.translate(str.maketrans(self.alpha, self.cipher))
         
@@ -31,7 +32,7 @@ def read_msg(filepath=''):
         return lines
     except:
         raise Exception('Oops...something went wrong reading the . This computer will self destruct in 10 seconds..')
-	
+
 if __name__ == '__main__':
     alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     cipher = 'YPLTAVKREZGMSHUBXNCDIJFQOWypltavkrezgmshubxncdijfqow'

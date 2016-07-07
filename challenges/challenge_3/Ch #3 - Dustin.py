@@ -33,6 +33,6 @@ def decrypt(msg):
 
 
 if __name__ == '__main__':
-    pass
+    # pass
     # encrypt_file('Secret Message')
-    # decrypt_file('Secret Message_encrypted.txt')
+    decrypt_file('Secret Message_encrypted.txt')
