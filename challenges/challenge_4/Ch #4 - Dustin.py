@@ -1,11 +1,13 @@
 import random
 
 
-def generate_pw(num):
+def generate_pw(num, min_char: int=8, max_char: int=28):
+    if min_char < 8:
+
     pws = []
     s = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ']', '[', ')']
     while len(pws) < num:
-        l = random.randrange(8, 28, 1)
+        l = random.randrange(min_char, max_char, 1)
         x = ''.join(random.sample("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*(][)", l))
         counts = {'upper': 0, 'lower': 0, 'number': 0, 'special': 0}
         for c in x:
