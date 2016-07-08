@@ -1,9 +1,11 @@
 import random
+import sys
 
 
 def generate_pw(num, min_char: int=8, max_char: int=28):
     if min_char < 8:
-
+        print("please enter a length of at least 8 characters")
+        sys.exit()
     pws = []
     s = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ']', '[', ')']
     while len(pws) < num:
