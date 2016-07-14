@@ -17,6 +17,7 @@ class PasswordGenerator():
         :raises: An exception if the password is not long enough
         Performance Analysis: Worst Case Performance O(n)
         '''
+
         if l < 8:
             raise Exception("You're gonna get hacked...")
         p = ''.join(random.choice(self.alphabet) for i in range(0, l))
@@ -46,7 +47,7 @@ class PasswordGenerator():
 if __name__ == '__main__':
     p = PasswordGenerator()
     try:
-        pd = p.generate_pass(9)
+        pd = p.generate_pass(6)
         print("Password: "+pd)
         print("Quality: "+p.check_pass(pd))
     except Exception as e:

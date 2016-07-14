@@ -1,0 +1,6 @@
+Hey Guys,
+This week’s objective is to write a program that can calculate pi accurately to at least 30 decimal places.
+https://www.reddit.com/r/dailyprogrammer/comments/pp53w/2142012_challenge_6_easy/
+(I know it’s challenge #6, but I didn’t really like #5 at all)
+
+Bonus points for explaining your Pi formula! (who discovered it, and what mathematical principles does it use?)
