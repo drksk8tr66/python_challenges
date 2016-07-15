@@ -1,8 +1,11 @@
 from decimal import Decimal, getcontext
 
-while not input("How many decimal places do you want? :").isdigit():
-    if
-    print("Please enter a valid number, or enter Q to quit")
+places = input("How many decimal places do you want? :")
+while not places.isdigit():
+    if places.upper() == 'Q':
+        exit()
+    else:
+        places = input("Please Enter a number for how many decimal places do you want?, or Enter Q to quit :")
 
 places = int(places)
 getcontext().prec = places
