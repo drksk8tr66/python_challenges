@@ -30,7 +30,6 @@ class MyApp(Tk):
         self.input_text.get()
         msg = self.input_text.get()
         self.morse_msg = encode(msg)
-        print(self.morse_msg)
         self.blink()
 
     def stop_blinking(self):
@@ -52,18 +51,12 @@ class MyApp(Tk):
     def blink(self):
         if self.do_blink:
             if self.morse_msg[self.i] == '.':
-                print(self.i)
-                print("short")
                 self.canvas.itemconfigure(self.rect, fill="red")
                 self.after(500, self.blink_off)
             elif self.morse_msg[self.i] == '-':
-                print(self.i)
-                print("long")
                 self.canvas.itemconfigure(self.rect, fill="red")
                 self.after(1000, self.blink_off)
             elif self.morse_msg[self.i] == '/':
-                print(self.i)
-                print("pass")
                 self.i += 1
                 self.after(500, self.blink)
             else:
