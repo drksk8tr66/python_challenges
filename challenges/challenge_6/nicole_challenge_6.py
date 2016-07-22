@@ -4,6 +4,9 @@ https://www.reddit.com/r/dailyprogrammer/comments/pr2xr/2152012_challenge_7_easy
 '''
 
 import sys
+import winsound
+import time
+import pygame
 
 
 def translate_morse(m):
@@ -29,13 +32,10 @@ def translate_morse(m):
         message = m
         morse = ''.join(to_morse.get(char, char) + ' ' for char in m)
 
-    return is_morse, message, morse
+    return {'is_morse': is_morse, 'message': message, 'morse': morse}
 
 
 def play_morse(morse, message):
-    import winsound
-    import time
-    import pygame
 
     # Function called to display the code on the screen
     def display(morse, message):
@@ -108,14 +108,14 @@ def main():
     user_input = sys.stdin.read().upper().rstrip()
 
     # Translate message
-    is_morse, message, morse = translate_morse(user_input)
-    if is_morse is True:
-        print(message)
-    elif is_morse is False:
-        print(morse)
+    translate = translate_morse(user_input)
+    if translate.get('is_morse') is True:
+        print(translate.get('message'))
+    elif translate.get('is_morse') is False:
+        print(translate.get('morse'))
 
     # Play the message for the user to see/hear
-    play_morse(morse, message)
+    play_morse(translate.get('morse'), translate.get('message'))
 
 
 if __name__ == "__main__":
