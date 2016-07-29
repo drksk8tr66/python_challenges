@@ -9,7 +9,7 @@ def count_bottles(bottles: int=99):
     while num_bottles > 1:
         print('{0}{1}{2}{0}{1}{3}'.format(num_bottles, stanza1, stanza2, stanza3))
         num_bottles -= 1
-        print('{0}{1}{2}'.format(num_bottles, stanza1, stanza2, stanza3))
+        print('{0}{1}{2}'.format(num_bottles, stanza1, stanza2))
     print('{0}{1}{2}{0}{1}{3}'.format(num_bottles, ' bottle of beer', stanza2, stanza3))
     print('No more bottles of beer on the wall!')
 
