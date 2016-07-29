@@ -1,0 +1,7 @@
+https://www.reddit.com/r/dailyprogrammer/comments/pu1rf/2172012_challenge_9_easy/
+
+This week, we will be writing a program that will allow the user to input digits, and arrange them in numerical order.
+For Bonus Points, we will also accepts strings to be re-ordered alphabetically.
+	-I am not putting any constraints on how we should treat strings with whitespace (words), I want to see what we all come up with 
+For Super Bonus Points, let’s allow the use of integers, floats, decimals, and any other numerical data types that you can think of.
+	-Keep the data type, scale, and precision for all values entered, then order them numerically.
