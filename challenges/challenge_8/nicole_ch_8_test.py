@@ -4,7 +4,7 @@ https://www.reddit.com/r/dailyprogrammer/comments/pu1rf/2172012_challenge_9_easy
 '''
 
 import unittest
-from python_challenges.challenges.challenge_8.nicole_ch_8 import sort_list
+from challenges.challenge_8.nicole_ch_8 import sort_list
 
 
 class test_sort(unittest.TestCase):
