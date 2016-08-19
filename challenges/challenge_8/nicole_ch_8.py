@@ -9,9 +9,10 @@ def sort_list(values):
     num_values = []
     str_values = []
     for v in values:
-        if v.isnumeric():
+        try:
+            complex(v)
             num_values.append(v)
-        else:
+        except ValueError:
             str_values.append(v)
 
     # Sorting the values accordingly
