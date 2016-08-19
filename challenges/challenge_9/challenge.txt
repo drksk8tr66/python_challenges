@@ -1,0 +1,11 @@
+"""
+This week’s Python challenge will depend on last week’s challenge.
+We will be writing a Unit Test for our functions we built during Challenge #8.
+Our Challenge #8 output should be in the form of an order/sorted list.
+
+Our unit tests must be able to test the functionality of the functions that we wrote.
+
+Bonus points for being able to test other peoples code for Challenge #8.
+
+Please refer to JJ’s Unit Test for Challenge #8 for examples of how to accomplish this.
+"""

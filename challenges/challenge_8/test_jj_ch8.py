@@ -34,5 +34,12 @@ class MyTestCase(unittest.TestCase):
         expected =  ['0.1', '1', 'a', 'b']
         self.assertEquals(order_list(x), expected)
 
+    def test_nicoles_test(self):
+        x = ['1', '10', '1', 'a']
+        expected = ['1', '1', '10', 'a']
+        self.assertEquals(order_list(x), expected)
+
+
+
 if __name__ == '__main__':
     unittest.main()
