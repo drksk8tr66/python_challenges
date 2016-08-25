@@ -1,6 +1,6 @@
 import cmath
 
-def arrange_msg(msg):
+def arrange_message(msg):
     nums = [int, float]
     chars = []
     digits = []
