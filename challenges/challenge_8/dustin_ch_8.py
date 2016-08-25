@@ -25,7 +25,7 @@ def arrange_message(msg):
 
 
 if __name__ == '__main__':
-    arrange_msg([1, 2, 3, 'a', 'b', 'c'])
+    arrange_message([1, 2, 3, 'a', 'b', 'c'])
 
 
 
