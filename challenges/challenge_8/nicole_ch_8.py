@@ -3,6 +3,8 @@ Sorting
 https://www.reddit.com/r/dailyprogrammer/comments/pu1rf/2172012_challenge_9_easy/
 '''
 
+import cmath
+
 
 def sort_list(values):
     # Determining if the value is a number or a string
@@ -10,10 +12,15 @@ def sort_list(values):
     str_values = []
     for v in values:
         try:
-            complex(v)
+            float(v)
             num_values.append(v)
-        except ValueError:
-            str_values.append(v)
+        except (ValueError, TypeError):
+            try:
+                v = complex(v)
+                v = cmath.phase(v)
+                num_values.append(v)
+            except (ValueError, TypeError):
+                str_values.append(v)
 
     # Sorting the values accordingly
     num_values = sorted(num_values, key=float)
