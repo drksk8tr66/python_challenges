@@ -20,12 +20,13 @@ def arrange_message(msg):
             sorted_msg.append(i)
     elif chars:
         sorted_msg = chars
+    print(sorted_msg)
     return sorted_msg
 
 
 
 if __name__ == '__main__':
-    arrange_message([1, 2, 3, 'a', 'b', 'c'])
+    arrange_message([-10, -2, -1, 1, 2, 10, 'a1', 'apple', 'b1', 'b2', 'banana'])
 
 
 
