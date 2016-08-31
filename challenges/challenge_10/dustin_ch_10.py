@@ -6,16 +6,17 @@ def validate(t_num):
         return False
     if type(t_num) is not str:
         return False
-    t_num = t_num.replace(' ', '')
-    if re.match("[0-9]{10}$|[0-9]{7}$|([0-9]{3}-)?[0-9]{3}-[0-9]{4}$|[0-9]{3}\.[0-9]{3}\.[0-9]{4}$|"
-                "\([0-9]{3}\) ?[0-9]{3}-[0-9]{4}$", t_num):
+    #t_num = t_num.replace(' ', '')
+    if re.match("[0-9]{3}-? ?[0-9]{3}-? ?[0-9]{4}$|[0-9]{3} ?[0-9]{4}$|([0-9]{3}-)?[0-9]{3}-[0-9]{4}$|"
+                "[0-9]{3}\.[0-9]{3}\.[0-9]{4}$|\([0-9]{3}\) ?[0-9]{3}-[0-9]{4}$", t_num):
         return True
     else:
         return False
 
 
 if __name__ == '__main__':
-    print(validate('123 456 7890'))
+    #print(test('123456-7890'))
+    print(validate('123456-7890'))
     print(validate('123-456-7890'))
     print(validate('123.456.7890'))
     print(validate('(123)456-7890'))
@@ -24,3 +25,4 @@ if __name__ == '__main__':
     print(validate('123-45-6789'))
     print(validate('123:4567890'))
     print(validate('123/456-7890'))
+
