@@ -7,12 +7,24 @@ import re
 
 
 def validate_phone_number(p):
-    if re.match('((\(\d{3}\)|\d{3})[- .]?)?\d{3}[- .]?\d{4}$', p) is None:
-        valid = False
-    else:
-        valid = True
+    only_numbers = '\d{3}?\d{3}\d{4}$'
+    with_parens = '\(\d{3}\)[ ]?\d{3}[- .]?\d{4}$'
+    with_spaces = '(\d{3}[ ]?)?\d{3}[ ]\d{4}$'
+    with_dots = '(\d{3}[.]?)?\d{3}[.]?\d{4}$'
+    with_hyphens = '(\d{3}[-]?)?\d{3}[-]?\d{4}$'
 
-    return valid
+    if re.match(only_numbers, p) is not None:
+        return True
+    elif re.match(with_parens, p) is not None:
+        return True
+    elif re.match(with_spaces, p) is not None:
+        return True
+    elif re.match(with_dots, p) is not None:
+        return True
+    elif re.match(with_hyphens, p) is not None:
+        return True
+    else:
+        return False
 
 
 def main():
