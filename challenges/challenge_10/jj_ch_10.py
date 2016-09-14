@@ -20,8 +20,15 @@ class PhoneCheck:
         else:
             self.regex = regex
 
-    def validate(self, phone):
-        return True if re.match(self.regex, phone) else False
+    @staticmethod
+    def validate(phone):
+        regex = r"^[0-9]{10}|" \
+                r"[0-9]{3}-{1}[0-9]{3}-{1}[0-9]{4}|" \
+                r"[0-9]{3} {1}[0-9]{3} {1}[0-9]{4}|" \
+                r"[0-9]{3}\.{1}[0-9]{3}\.{1}[0-9]{4}|" \
+                r"\([0-9]{3}\) {0,1}[0-9]{3}-{1}[0-9]{4}|" \
+                r"[0-9]{3}-{1}[0-9]{4}"
+        return True if re.match(regex, phone) else False
 
 
 if __name__ == '__main__':
