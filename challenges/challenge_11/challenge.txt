@@ -1,0 +1,44 @@
+This week, we will be writing our UnitTests while we write our program.
+Winners will the ones whose code runs in the least amount of time, AND whose code is written with the fewest lines of code. (Code golf)
+Bonus points to be awarded for using a coding method that we have not seen/used before in our challenges (decorators, static functions, new design patterns, etc)
+
+Program Parameters:
+We will be writing a program….
+“The program should take three arguments. The first will be a day, the second will be month, and the third will be year. Then, your program should compute the day of the week that date will fall on.”
+https://www.reddit.com/r/dailyprogrammer/comments/pwons/2192012_challenge_11_easy/
+
+Accepted Inputs:
+3 arguments as integers
+1st = day
+2nd = month
+3rd = year
+
+Accepted Outputs:
+All outputs should be formatted as strings
+Valid Dates:
+
+•	Monday
+•	Tuesday
+•	Wednesday
+•	Thursday
+•	Friday
+•	Saturday
+•	Sunday
+
+Invalid Dates:
+
+•	Invalid Date
+
+•	Ex. 2/29/2017
+•	Ex. 13/38/2016
+•	Ex. Jan/8/2017 (string instead of integer)
+
+
+
+Note:
+We will be using the Gregorian Calendar for our program.
+I cannot find exact measurements on how far out its accuracy allows us (I think something along the lines 1 day in ~3,300 years)
+Let’s go to the extremes and see how accurate we can get, and then argue about it during our meeting 
+
+
+
