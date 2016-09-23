@@ -10,5 +10,16 @@ def convert(d, m, y):
         return "Invalid Date"
 
 
+def convert_golf(d, m, y):
+    try:
+        return datetime.date(y, m, d).strftime('%A')
+    except (ValueError, TypeError):
+        return "Invalid Date"
+
+
 if __name__ == '__main__':
-    print(convert(13, 3, 2016))
+    d = 13
+    m = 3
+    y = 'Jan'
+    print(convert(d, m, y))
+    print(convert_golf(d, m, y))
