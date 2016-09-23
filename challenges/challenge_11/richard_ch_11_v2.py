@@ -10,5 +10,3 @@ def getweekday(d, m, y):
         return wkdaylist[wkday]
 
 
-print(getweekday(23, 9, 2016))
-
