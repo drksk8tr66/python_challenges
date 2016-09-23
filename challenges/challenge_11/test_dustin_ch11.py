@@ -1,6 +1,7 @@
 import unittest
 from challenges.challenge_11.dustin_ch_11 import convert
 from challenges.challenge_11.nicole_ch_11 import get_day_of_week
+from challenges.challenge_11.richard_ch_11_v2 import getweekday
 
 
 class MyTestCase(unittest.TestCase):
@@ -12,6 +13,7 @@ class MyTestCase(unittest.TestCase):
         expected = 'Friday'
         self.assertEquals(convert(d, m, y), expected)
         self.assertEquals(get_day_of_week(d, m, y), expected)
+        self.assertEquals(getweekday(d, m, y), expected)
 
     def test_invalid_month(self):
         d = 23
@@ -20,6 +22,7 @@ class MyTestCase(unittest.TestCase):
         expected = 'Invalid Date'
         self.assertEquals(convert(d, m, y), expected)
         self.assertEquals(get_day_of_week(d, m, y), expected)
+        self.assertEquals(getweekday(d, m, y), expected)
 
     def test_day_1(self):
         d = 1
@@ -28,6 +31,7 @@ class MyTestCase(unittest.TestCase):
         expected = 'Monday'
         self.assertEquals(convert(d, m, y), expected)
         self.assertEquals(get_day_of_week(d, m, y), expected)
+        self.assertEquals(getweekday(d, m, y), expected)
 
     def test_day_leap(self):
         d = 29
@@ -36,6 +40,7 @@ class MyTestCase(unittest.TestCase):
         expected = 'Monday'
         self.assertEquals(convert(d, m, y), expected)
         self.assertEquals(get_day_of_week(d, m, y), expected)
+        self.assertEquals(getweekday(d, m, y), expected)
 
     def test_day_not_leap(self):
         d = 29
@@ -44,6 +49,7 @@ class MyTestCase(unittest.TestCase):
         expected = 'Invalid Date'
         self.assertEquals(convert(d, m, y), expected)
         self.assertEquals(get_day_of_week(d, m, y), expected)
+        self.assertEquals(getweekday(d, m, y), expected)
 
     def test_day_last(self):
         d = 31
@@ -52,6 +58,7 @@ class MyTestCase(unittest.TestCase):
         expected = 'Friday'
         self.assertEquals(convert(d, m, y), expected)
         self.assertEquals(get_day_of_week(d, m, y), expected)
+        self.assertEquals(getweekday(d, m, y), expected)
 
 
 if __name__ == '__main__':
