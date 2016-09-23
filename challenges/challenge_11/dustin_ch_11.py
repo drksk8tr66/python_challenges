@@ -18,8 +18,8 @@ def convert_golf(d, m, y):
 
 
 if __name__ == '__main__':
-    d = 13
-    m = 3
-    y = 'Jan'
+    d = 31
+    m = 12
+    y = 9999
     print(convert(d, m, y))
     print(convert_golf(d, m, y))
