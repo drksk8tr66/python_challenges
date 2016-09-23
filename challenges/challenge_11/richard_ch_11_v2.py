@@ -1,6 +1,6 @@
 from datetime import datetime
 
-def getweekday(m, d, y):
+def getweekday(d, m, y):
     try:
         wkday = datetime(int(y), int(m), int(d)).weekday()
     except ValueError:
