@@ -26,7 +26,7 @@ class test_day_of_week(unittest.TestCase):
         self.assertEquals(convert(d, m, y), expected)
 
     def test_invalid_month(self):
-        d =
+        d = 10
         m = 13
         y = 2016
         expected = 'Invalid Date'
