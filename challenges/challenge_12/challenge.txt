@@ -1,0 +1,13 @@
+This week’s Python Challenge, we will be kicking it up a notch by moving to the Intermediate Challenges!
+https://www.reddit.com/r/dailyprogrammer/comments/pjbuj/intermediate_challenge_2/
+
+This challenge, we will be creating a Text Adventure Game.
+
+SRC:
+create a short text adventure that will call the user by their name.
+The text adventure should use standard text adventure commands ("l, n, s, e, i, etc.").
+for extra credit, make sure the program doesn't fault, quit, glitch, fail, or loop no matter what is put in, even empty text or spaces.
+
+While making a game is fun, let’s build a game together, and create something awesome!
+During this meeting, we will be discussing how we have come up with what we have, and how to integrate them together.
+The end results should be that we wrap all of our “levels” together into a Text Adventure Epic for use during our next meeting on Oct. 7th.
