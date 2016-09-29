@@ -3,9 +3,9 @@ Text Adventure Game
 https://www.reddit.com/r/dailyprogrammer/comments/pjbuj/intermediate_challenge_2/
 """
 
-from challenges.challenge_12 import maze
 import pickle  # Allows us to read a dictionary from a file
 
+from challenges.challenge_12.nicole import maze
 
 if __name__ == "__main__":
     # Using the maze class and object
