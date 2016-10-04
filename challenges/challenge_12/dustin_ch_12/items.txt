@@ -1,2 +1,2 @@
-potion | _char.heal(10)
-key | _door.unlock()
+potion|_char.heal(10)
+key|wood|_door.unlock()
