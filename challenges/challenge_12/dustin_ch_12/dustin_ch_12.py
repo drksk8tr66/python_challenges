@@ -19,19 +19,22 @@ class Inventory:
     def drop_item(self, name, qty: int = 1):
         if name in [x for x in self.items]:
             self.items[name] -= qty
+            if self.items[name] <= 0:
+                del self.items[name]
         else:
             return "Item not dropped, not found in Inventory"
 
     def use_item(self, name):
         if name in [x for x in self.items]:
             # call action to use item
-            path = 'challenge_12/dustin_ch_12/'
-            f = open('items.txt', 'r', newline='')
+            path = 'C:/Users/dust7667/Documents/GitHub/python_challenges/challenges/challenge_12/dustin_ch_12/'
+            f = open(path + 'items.txt', 'r', newline='')
             for line in f:
                 l = line.split('|')
                 if l[0] == name:
-                    func = lambda x: l[2]
-                    return func
+                    func = l[2]
+                    exec(func)
+                    break
             self.drop_item(name, 1)
         else:
             return "Item not used, not found in Inventory"
@@ -59,9 +62,10 @@ class Character:
         else:
             self.health += amount
 
-    def death(self):
+    def death(self, msg: str = 'You have died'):
         # this is the end of the game, you have died
-        return "Game Over Man!"
+        print(msg + ", Game Over Man!")
+        exit()
 
 
 class Location:
@@ -74,8 +78,7 @@ class Location:
 
 
 if __name__ == '__main__':
-    _door = items.Door('A stout wooden door.', 'wood', True)
-    _key = items.Key('wood')
+    _door = items.get_door(['A stout wooden door.', 'wood', True])
     field = Location('field', 'A grassy field with blue wildflowers and a road leading to the North.')
     player_one = Character('Dusty', 'Mild-mannered developer by day, enjoys long walks and dipping his toes in the '
                                     'Putrid Sound by night', field)
@@ -86,5 +89,10 @@ if __name__ == '__main__':
     print(player_one.check_inventory())
     print(_door.description)
     player_one.inventory.use_item('key')
-    #_key.use()
+    print(player_one.check_inventory())
     print(_door.is_locked)
+    player_one.take_damage(20)
+    print(player_one.health)
+    player_one.inventory.use_item('potion')
+    print(player_one.check_inventory())
+    print(player_one.health)

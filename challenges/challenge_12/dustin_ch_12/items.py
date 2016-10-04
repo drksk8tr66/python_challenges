@@ -13,13 +13,13 @@ def get_door(location):
     return _door
 
 
-def _const_door(location):
+def _const_door(door):
     global _door
-    if not location:
+    if not door:
         return "No door in this location."
-    descr = location['door'][0]
-    door_type = location['door'][1]
-    is_locked = location['door'][2]
+    descr = door[0]
+    door_type = door[1]
+    is_locked = door[2]
     _door = Door(descr, door_type, is_locked)
 
 
@@ -45,7 +45,7 @@ class Key:
         if not _door:
             return "No door available to unlock."
         elif _door.door_type == self.key_type:
-            _door.unlock()
+            return _door.unlock
         elif _door.door_type != self.key_type:
             return "This key cannot open this type of door."
 
