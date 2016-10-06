@@ -80,6 +80,7 @@ class Location:
 if __name__ == '__main__':
     _door = items.get_door(['A stout wooden door.', 'wood', True])
     field = Location('field', 'A grassy field with blue wildflowers and a road leading to the North.')
+    field.add_path
     player_one = Character('Dusty', 'Mild-mannered developer by day, enjoys long walks and dipping his toes in the '
                                     'Putrid Sound by night', field)
     print(player_one.location.look())
