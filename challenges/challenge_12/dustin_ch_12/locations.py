@@ -3,6 +3,21 @@ This loads all of the locations and generates their objects
 """
 
 
+def get_location(name):
+    location = None
+    f = open("locations.txt", 'r', newline='')
+    line = f.readline().strip('\n\r').split('|')
+    if line[0] == name:
+        location = Location(line[0], line[1])
+        line = f.readline().strip('\n\r').split('|')
+        while line != ['']:
+            location.add_path(line[0], line[1], line[2], line[3])
+            line = f.readline().strip('\n\r').split('|')
+        f.close()
+        return location
+    return "No Location with that name found"
+
+
 class Location:
     def __init__(self, l_name, description):
         self.name = l_name
@@ -40,14 +55,7 @@ if __name__ == '__main__':
     print(field.look('s'))
     print(field.look('e'))
     """
-    f = open("locations.txt", 'r', newline='')
-    for line in f:
-        txt = line.split('|')
-        name = txt[0]
-        descr = txt[1]
-        Location(name, descr)
-        #create location object here
-    f.close()
+
     #print(field.description)
     """
 

@@ -1,13 +1,12 @@
-field|A grassy field with blue wildflowers and a road leading to the North.
-road|A dirt path that leads North.
-castle|A grand stone castle rises before you in the distance.
-drawbridge|A drawbridge is lowered across a moat with two surly looking guards blocking your path.
-drawbridge2|Having answered the guards riddles, they step aside allowing you passage North into the Castle market.
-market|There is a parade in your honor for having made it this far. Peasants and nobles alike cheer you on as you pass through the market.
-courtyard|The Castle courtyard is very impressive with lots of plants, but the Castle lays beyond it to the North.
-east_courtyard|The east courtyard boasts an impressive 23 outhouses, 29 if you're not picky.
-west_courtyard|The west courtyard is a lie.
-castle_proper|A very heavy door bars your path into the castle proper, you are not strong enough to move this door.
-castle_proper2|Stepping over the aged jar of Mayo that gave its life to help open the enormous doors, you continue North.
-castle_throne|A very jolly king thanks you for being able to open the giant doors as he had been stuck now for several days.
-castle_feast|A feast is held in your honor for beating the ga...er..saving the king. Roll Credits.
+field|A grassy field with blue wildflowers and a road leading North, East, and South.
+N|To the North, you see a road.|True|A road lays before you.
+E|To the East, you see a road.|True|A road lays before you.
+S|To the South, you see a road.|True|A road lays before you.
+W|To the West, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
+
+field_barren|A barren field with no life what-so-ever.
+N|To the North, you see a road.|True|A road lays before you.
+E|To the East, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
+S|To the South, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
+W|To the West, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
+
