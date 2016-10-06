@@ -28,8 +28,7 @@ class Inventory:
     def use_item(self, name):
         if name in [x for x in self.items]:
             # call action to use item
-            path = 'C:/Users/dust7667/Documents/GitHub/python_challenges/challenges/challenge_12/dustin_ch_12/'
-            f = open(path + 'items.txt', 'r', newline='')
+            f = open('items.txt', 'r', newline='')
             for line in f:
                 l = line.split('|')
                 if l[0] == name:
