@@ -54,8 +54,5 @@ if __name__ == '__main__':
     print(field.look('n'))
     print(field.look('s'))
     print(field.look('e'))
-    """
 
-    #print(field.description)
-    """
 
