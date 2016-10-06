@@ -59,6 +59,7 @@ class Character:
 
     def take_damage(self, amount):
         self.health -= amount
+        print("You took {} damage!".format(amount))
         if self.health <= 0:
             self.death()
 
@@ -95,6 +96,7 @@ def main():
     player_one.inventory.use_item('potion')
     print(player_one.check_inventory())
     print(player_one.check_health())
+    player_one.take_damage(100)
 
 
 if __name__ == '__main__':
