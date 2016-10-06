@@ -1,12 +1,24 @@
-field|A grassy field with blue wildflowers and a road leading North, East, and South.
-N|To the North, you see a road.|True|A road lays before you.
-E|To the East, you see a road.|True|A road lays before you.
-S|To the South, you see a road.|True|A road lays before you.
-W|To the West, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
+location|field|A grassy field with blue wildflowers and a road leading North, East, and South.
+path|N|To the North, you see a road.|True|A road lays before you.
+path|E|To the East, you see a road.|True|A road lays before you.
+path|S|To the South, you see a road.|True|A road lays before you.
+path|W|To the West, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
+npc|Richard|He is balding and not attending classes
+item|key|a key is held by Richard
 
 field_barren|A barren field with no life what-so-ever.
 N|To the North, you see a road.|True|A road lays before you.
 E|To the East, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
 S|To the South, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
 W|To the West, you see a cliff-face.|False|The cliff is too tall to scale, you must go another direction.
+
+8,19|castle|descr
+N
+E
+W
+
+8,20|courtyard|descr
+N
+W
+S
 
