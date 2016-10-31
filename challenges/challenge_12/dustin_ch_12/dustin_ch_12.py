@@ -1,5 +1,6 @@
 # https://www.reddit.com/r/dailyprogrammer/comments/pjbuj/intermediate_challenge_2/
 from challenges.challenge_12.dustin_ch_12 import items
+from challenges.challenge_12.dustin_ch_12 import locations
 
 
 class Inventory:
@@ -27,8 +28,7 @@ class Inventory:
     def use_item(self, name):
         if name in [x for x in self.items]:
             # call action to use item
-            path = 'C:/Users/dust7667/Documents/GitHub/python_challenges/challenges/challenge_12/dustin_ch_12/'
-            f = open(path + 'items.txt', 'r', newline='')
+            f = open('items.txt', 'r', newline='')
             for line in f:
                 l = line.split('|')
                 if l[0] == name:
@@ -36,6 +36,7 @@ class Inventory:
                     exec(func)
                     break
             self.drop_item(name, 1)
+            print("You used a {}.".format(name))
         else:
             return "Item not used, not found in Inventory"
 
@@ -49,18 +50,25 @@ class Character:
         self.health = 100
 
     def check_inventory(self):
+        print("This is what is currently in your {}".format(self.inventory.name))
         return self.inventory.items
+
+    def check_health(self):
+        return "You are at {} health.".format(self.health)
 
     def take_damage(self, amount):
         self.health -= amount
+        print("You took {} damage!".format(amount))
         if self.health <= 0:
             self.death()
 
     def heal(self, amount):
+        c_health = self.health
         if self.health + amount >= 100:
             self.health = 100
         else:
             self.health += amount
+        print("You have been healed for {} health".format(self.health - c_health))
 
     def death(self, msg: str = 'You have died'):
         # this is the end of the game, you have died
@@ -68,21 +76,12 @@ class Character:
         exit()
 
 
-class Location:
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
-
-    def look(self):
-        return self.description
-
-
-if __name__ == '__main__':
-    _door = items.get_door(['A stout wooden door.', 'wood', True])
-    field = Location('field', 'A grassy field with blue wildflowers and a road leading to the North.')
-    player_one = Character('Dusty', 'Mild-mannered developer by day, enjoys long walks and dipping his toes in the '
-                                    'Putrid Sound by night', field)
+def main():
     print(player_one.location.look())
+    print(player_one.location.look('N'))
+    print(player_one.location.look('S'))
+    print(player_one.location.look('E'))
+    print(player_one.location.look('W'))
     player_one.inventory.add_item('potion', 2)
     player_one.inventory.add_item('sword', 1)
     player_one.inventory.add_item('key', 1)
@@ -92,7 +91,17 @@ if __name__ == '__main__':
     print(player_one.check_inventory())
     print(_door.is_locked)
     player_one.take_damage(20)
-    print(player_one.health)
+    print(player_one.check_health())
     player_one.inventory.use_item('potion')
     print(player_one.check_inventory())
-    print(player_one.health)
+    print(player_one.check_health())
+    player_one.take_damage(100)
+
+
+if __name__ == '__main__':
+    _door = items.get_door(['A stout wooden door.', 'wood', True])
+    field = locations.get_location('field')
+    player_one = Character('Dusty', 'Mild-mannered developer by day, enjoys long walks and dipping his toes in the '
+                                    'Putrid Sound by night', field)
+    main()
+
