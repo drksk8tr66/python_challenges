@@ -1,26 +1,20 @@
 """
-There are two classes defined in this module:
-
 Position: Tracks user movement around a two dimensional grid
     coordinates: A dictionary where the key is a tuple of the x, y coordinate and the value is a tuple of the
-        available N/E/S/W directions from the x, y coordinate
-    entry_coord: A tuple of the x, y coordinate of maze entry
-    exit_coord: A tuple of the x, y coordinate of maze exit
-    current_position: A tuple of the x, y coordinate of the current position of the user in the maze
+        available N/E/S/W directions in 0s and 1s, respectively, from the x, y coordinate
+    entry_coord: A tuple of the x, y coordinate of grid entry
+    exit_coord: A tuple of the x, y coordinate of grid exit
+    current_position: A tuple of the x, y coordinate of the current position of the user in the grid
     direction: N/E/S/W direction to go from current_position
     new_position: What the new x, y coordinate tuple would be going "direction" from "current position" (this may or
         may not be a valid position, call validate_position function to determine)
     instructions: List of available commands
-    story_valid_direction: Message to display if the user can go in the chosen direction
-    story_invalid_direction: Message to display if the user cannot go in the chosen direction
-
-Maze: Subclass of Position that creates a maze game/story
-    story_start: The start of the text adventure story to display to the user
-    story_end: The end of the text adventure story to display to the user
+    valid_direction: Message to display if the user can go in the chosen direction
+    invalid_direction: Message to display if the user cannot go in the chosen direction
 """
 
 
-class Position:
+class Position(object):
     def __init__(self):
         """
         Initializing all of the variables to be used throughout this class
@@ -33,12 +27,12 @@ class Position:
         self.direction = None
         self.new_position = None
         self.instructions = 'Available commands:\nQ: quit\nN: go north\nE: go east\nS: go south\nW: go west\n'
-        self.story_valid_direction = 'You walk along the path.'
-        self.story_invalid_direction = 'There is a wall.'
+        self.valid_direction = 'You walk along the path.'
+        self.invalid_direction = 'There is a wall.'
 
-    def set_coordinates(self, coordinates=None, entry_coord=None, exit_coord=None):
+    def set_coordinates(self, coordinates, entry_coord, exit_coord):
         """
-        This function is for setting the coordinates of the maze
+        This function is for setting the coordinates of the grid
         Definitions for each variable are given at the top of this module
         """
         self.coordinates = coordinates
@@ -46,13 +40,35 @@ class Position:
         self.exit_coord = exit_coord
         self.current_position = self.entry_coord
 
-    def set_story_directions(self, story_valid_direction=None, story_invalid_direction=None):
+    def set_coordinates_from_file(self, file):
+        """
+        This function is for setting the coordinates of the grid from a file
+        Definitions for each variable are given at the top of this module
+        The file must be in format:
+            x coordinate, y coordinate, int bool north direction, int bool east direction, int bool south direction,
+                int bool west direction, entry/exit/interior description
+        Example:
+        0,0,1,0,0,0,Entry
+        0,1,1,0,0,0,Interior
+        0,2,0,0,0,0,Exit
+        """
+        with open(file, 'r') as file:
+            for line in file:
+                x, y, n, e, s, w, description = line.replace('\n', '').split(',')
+                self.coordinates[(int(x), int(y))] = (int(n), int(e), int(s), int(w))
+                if description == 'Entry':
+                    self.entry_coord = (int(x), int(y))
+                    self.current_position = self.entry_coord
+                if description == 'Exit':
+                    self.exit_coord = (int(x), int(y))
+
+    def set_story_directions(self, valid_direction, invalid_direction):
         """
         This function is for setting the directional story elements
         Definitions for each variable are given at the top of this module
         """
-        self.story_valid_direction = story_valid_direction
-        self.story_invalid_direction = story_invalid_direction
+        self.valid_direction = valid_direction
+        self.invalid_direction = invalid_direction
 
     def change_position(self):
         """
@@ -61,22 +77,20 @@ class Position:
         :return: A tuple of the x, y coordinate of the new position, however, if the direction entered was invalid, the
             new position will equal the old position, and the x, y coordinate will not have changed
         """
-        x = self.current_position[0]
-        y = self.current_position[1]
-        if self.direction.upper() in self.coordinates.get((x, y)):
-            if self.direction.upper() == 'N':
-                y += 1
-            elif self.direction.upper() == 'E':
-                x += 1
-            elif self.direction.upper() == 'S':
-                y -= 1
-            elif self.direction.upper() == 'W':
-                x -= 1
+        x, y = self.current_position
+        if self.direction.upper() == 'N' and self.coordinates.get((x, y))[0] == 1:
+            y += 1
+        elif self.direction.upper() == 'E' and self.coordinates.get((x, y))[1] == 1:
+            x += 1
+        elif self.direction.upper() == 'S' and self.coordinates.get((x, y))[2] == 1:
+            y -= 1
+        elif self.direction.upper() == 'W' and self.coordinates.get((x, y))[3] == 1:
+            x -= 1
         return x, y
 
     def user_interaction(self):
         """
-        This function asks the user to enter a command and either quits, moves the user through the maze, or shows an
+        This function asks the user to enter a command and either quits, moves the user through the grid, or shows an
             error for an invalid command
         Definitions for each variable are given at the top of this module
         """
@@ -94,42 +108,18 @@ class Position:
         Definitions for each variable are given at the top of this module
         """
         if self.new_position == self.current_position:
-            print(self.story_invalid_direction)
+            print(self.invalid_direction)
         else:
-            print(self.story_valid_direction)
+            print(self.valid_direction)
             self.current_position = self.new_position
 
-
-class Maze(Position):
-
-    def __init__(self):
+    def default_navigation(self):
         """
-        Initializing all of the variables to be used throughout this class
+        This function will allow the user to navigate through the grid
         Definitions for each variable are given at the top of this module
         """
-        Position.__init__(self)
-        self.story_start = 'You wake up in a cage.  You don\'t remember how you got here.  In front of you is what ' \
-                           'looks like a maze.  The maze looks like your only way out.\n'
-        self.story_end = 'You emerge on the other side of the maze.  You still don\'t know where you are or what ' \
-                         'happened, but you\'re glad to be out.'
-
-    def set_story(self, story_start=None, story_end=None):
-        """
-        This function is for setting the beginning and ending story elements
-        Definitions for each variable are given at the top of this module
-        """
-        self.story_start = story_start
-        self.story_end = story_end
-
-    def default_maze(self):
-        """
-        This function will give the user the default maze if no changes are desired
-        Even if using this function, the coordinates will still need to be set in order to contain an actual maze
-        Definitions for each variable are given at the top of this module
-        """
-        print(self.story_start)
         print(self.instructions)
         while self.current_position != self.exit_coord:
             self.user_interaction()
             self.validate_direction()
-        print(self.story_end)
+
