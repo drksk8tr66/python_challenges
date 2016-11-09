@@ -1,0 +1,8 @@
+1|1|0|1|0|0|Entry|field|A grassy field with blue wildflowers and a road leading to the North.
+2|1|0|1|0|0|Interior|road|A road lays before you.
+3|1|0|1|0|0|Exit|house|A little brick house.
+0|1|0|0|0|0|Interior|cliff|A cliff with a huge drop onto jagged rocks.
+2|2|0|0|0|0|Interior|cliff|A cliff with a huge drop onto jagged rocks.
+1|2|0|0|0|0|Interior|cliff|A cliff with a huge drop onto jagged rocks.
+1|0|0|0|0|0|Interior|fence|A fence too high to scale.
+2|0|0|0|0|0|Interior|fence|A fence too high to scale.
