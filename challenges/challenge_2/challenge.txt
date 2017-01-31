@@ -1,0 +1,7 @@
+# https://www.reddit.com/r/dailyprogrammer/comments/pjbj8/easy_challenge_2/
+
+Hello, coders! An important part of programming is being able to apply your programs.
+So your challenge for today is to create a calculator application that has use in your life.
+We will be making a Force Calculator using F = M * A.
+EXTRA CREDIT: make the calculator have multiple functions!
+Not only should it be able to calculate F = M * A, but also A = F/M, and M = F/A!
