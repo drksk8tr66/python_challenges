@@ -1,6 +1,6 @@
 # https://www.reddit.com/r/dailyprogrammer/comments/pjbuj/intermediate_challenge_2/
 from challenges.challenge_12.dustin_ch_12 import items
-from challenges.challenge_12.dustin_ch_12 import locations
+from challenges.challenge_12.game_final import locations
 
 
 class Inventory:
