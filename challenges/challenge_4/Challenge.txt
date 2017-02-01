@@ -6,17 +6,14 @@ With this challenge, we will be creating Random Password Generators.
 All it needs to work is to output random strings to be used as passwords.
 Extra credit involves allowing the user to specify how many passwords they want to generate and the length of the passwords.
 
-That extra credit is kinda lame…let’s make it better…
-For extra credit, let’s build something that will check the strength of a password to tell whether it is strong or weak.
+That extra credit is kinda lame. Let us make it better.
+For extra credit, lets build something that will check the strength of a password to tell whether it is strong or weak.
 Add this function into the generator to only allow for strong passwords to be generated.
 
 
-Note: Don’t forget about standard password requirements…
-•	Uppercase characters
-•	Lowercase characters
-•	Numbers
-•	Special characters
+Note: Dont forget about standard password requirements
+Uppercase characters
+Lowercase characters
+Numbers
+Special characters
 
-
-
--Dustin
