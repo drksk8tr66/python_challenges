@@ -13,7 +13,7 @@ class MyTestCase(TestCase):
 
     def test_gather_basic_info(self):
         params = ['Dustin', 30, 'dust7667']
-        self.assertEqual(gather_info(params[0], params[1], params[2]), ['Dustin', 30, 'dust7667'])
+        self.assertEqual(gather_info(name=params[0], age=params[1], username=params[2]), ['Dustin', 30, 'dust7667'])
 
     def test_gather_string_info(self):
         params = ['Dustin', '30', 'dust7667']
