@@ -14,9 +14,9 @@ def gather_info(name: str=None, age: str=None, username: str=None):
 
 
 def print_info(info: list=None):
-    if info is None:
+    if info is None or len(info) < 1:
         return "You have not supplied the correct type of info"
-    message = "Your name is %s, you are %s years old, and your username is %s" % (info[0], info[1], info[2])
+    message = "Your name is {0}, you are {1} years old, and your username is {2}".format(info[0], info[1], info[2])
     return message
 
 
@@ -35,15 +35,23 @@ def read_from_file(f_name):
         f = open(f_name, 'r', newline='')
         results = []
         for x in f.readlines():
-            results.append(x)
+            results.append(x.strip('\n'))
         f.close()
-        print(results)
         return results
     return "file not found"
+
+
+def file_cleanup():
+    f = "Ch #1 - Dustin.txt"
+    if os.path.isfile(f):
+        os.remove(f)
 
 
 if __name__ == '__main__':
     inf = gather_info()
     print_info(inf)
     write_to_file(inf)
-    read_from_file("Ch #1 - Dustin.txt")
+    if os.path.isfile("Ch #1 - Dustin.txt"):
+        read_from_file("Ch #1 - Dustin.txt")
+        file_cleanup()
+

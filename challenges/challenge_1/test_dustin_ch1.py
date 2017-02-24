@@ -12,12 +12,30 @@ class MyTestCase(TestCase):
             f.close()
 
     def test_gather_basic_info(self):
-        ans = ['Dustin', 30, 'dust7667']
-        self.assertEqual(gather_info(ans[0], ans[1], ans[2]), ['Dustin', 30, 'dust7667'])
+        params = ['Dustin', 30, 'dust7667']
+        self.assertEqual(gather_info(name=params[0], age=params[1], username=params[2]), ['Dustin', 30, 'dust7667'])
+
+    def test_gather_string_info(self):
+        params = ['Dustin', '30', 'dust7667']
+        self.assertEqual(gather_info(name=params[0], age=params[1], username=params[2]), ['Dustin', '30', 'dust7667'])
+
+    def test_gather_wrongType_info(self):
+        params = [30, 'Dustin', True]
+        self.assertEqual(gather_info(name=params[0], age=params[1], username=params[2]), [30, 'Dustin', True])
 
     def test_print_basic_info(self):
         params = ['Dustin', 30, 'dust7667']
         ans = "Your name is {0}, you are {1} years old, and your username is {2}".format(params[0], params[1], params[2])
+        self.assertEqual(print_info(params), ans)
+
+    def test_print_no_info(self):
+        params = None
+        ans = "You have not supplied the correct type of info"
+        self.assertEqual(print_info(params), ans)
+
+    def test_print_blank_info(self):
+        params = []
+        ans = "You have not supplied the correct type of info"
         self.assertEqual(print_info(params), ans)
 
     def test_write_basic_info(self):
@@ -28,9 +46,17 @@ class MyTestCase(TestCase):
     def test_read_basic_info(self):
         f_name = "Ch #1 - Dustin.txt"
         params = ['Dustin', 30, 'dust7667']
-        ans = ['Dustin\n', '30\n', 'dust7667\n']
+        ans = ['Dustin', '30', 'dust7667']
         write_to_file(params)
         self.assertEqual(read_from_file(f_name), ans)
+
+    def test_print_read_basic_info(self):
+        f_name = "Ch #1 - Dustin.txt"
+        params = ['Dustin', 30, 'dust7667']
+        ans = "Your name is {0}, you are {1} years old, and your username is {2}".format(params[0], params[1],
+                                                                                         params[2])
+        write_to_file(params)
+        self.assertEqual(print_info(read_from_file(f_name)), ans)
 
     def tearDown(self):
         # the teardown is the last thing to run in the unit test
