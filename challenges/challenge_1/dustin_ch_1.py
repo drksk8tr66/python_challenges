@@ -42,8 +42,17 @@ def read_from_file(f_name):
     return "file not found"
 
 
+def file_cleanup():
+    f = "Ch #1 - Dustin.txt"
+    if os.path.isfile(f):
+        os.remove(f)
+
+
 if __name__ == '__main__':
     inf = gather_info()
     print_info(inf)
     write_to_file(inf)
-    read_from_file("Ch #1 - Dustin.txt")
+    if os.path.isfile("Ch #1 - Dustin.txt"):
+        read_from_file("Ch #1 - Dustin.txt")
+        file_cleanup()
+
