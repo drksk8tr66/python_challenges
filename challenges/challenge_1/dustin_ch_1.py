@@ -14,9 +14,9 @@ def gather_info(name: str=None, age: str=None, username: str=None):
 
 
 def print_info(info: list=None):
-    if info is None:
+    if info is None or len(info) < 1:
         return "You have not supplied the correct type of info"
-    message = "Your name is %s, you are %s years old, and your username is %s" % (info[0], info[1], info[2])
+    message = "Your name is {0}, you are {1} years old, and your username is {2}".format(info[0], info[1], info[2])
     return message
 
 

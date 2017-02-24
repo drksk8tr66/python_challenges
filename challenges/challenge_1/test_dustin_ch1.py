@@ -12,12 +12,22 @@ class MyTestCase(TestCase):
             f.close()
 
     def test_gather_basic_info(self):
-        ans = ['Dustin', 30, 'dust7667']
-        self.assertEqual(gather_info(ans[0], ans[1], ans[2]), ['Dustin', 30, 'dust7667'])
+        params = ['Dustin', 30, 'dust7667']
+        self.assertEqual(gather_info(params[0], params[1], params[2]), ['Dustin', 30, 'dust7667'])
 
     def test_print_basic_info(self):
         params = ['Dustin', 30, 'dust7667']
         ans = "Your name is {0}, you are {1} years old, and your username is {2}".format(params[0], params[1], params[2])
+        self.assertEqual(print_info(params), ans)
+
+    def test_print_no_info(self):
+        params = None
+        ans = "You have not supplied the correct type of info"
+        self.assertEqual(print_info(params), ans)
+
+    def test_print_blank_info(self):
+        params = []
+        ans = "You have not supplied the correct type of info"
         self.assertEqual(print_info(params), ans)
 
     def test_write_basic_info(self):
