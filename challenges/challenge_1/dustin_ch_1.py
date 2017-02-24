@@ -35,9 +35,8 @@ def read_from_file(f_name):
         f = open(f_name, 'r', newline='')
         results = []
         for x in f.readlines():
-            results.append(x)
+            results.append(x.strip('\n'))
         f.close()
-        print(results)
         return results
     return "file not found"
 
