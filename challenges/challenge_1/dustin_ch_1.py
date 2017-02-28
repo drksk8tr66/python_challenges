@@ -54,4 +54,3 @@ if __name__ == '__main__':
     if os.path.isfile("Ch #1 - Dustin.txt"):
         read_from_file("Ch #1 - Dustin.txt")
         file_cleanup()
-
