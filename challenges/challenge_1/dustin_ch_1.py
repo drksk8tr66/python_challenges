@@ -14,7 +14,7 @@ def gather_info(name: str=None, age: str=None, username: str=None):
 
 
 def print_info(info: list=None):
-    if info is None or len(info) < 1:
+    if info is None or len(info) != 3:
         return "You have not supplied the correct type of info"
     message = "Your name is {0}, you are {1} years old, and your username is {2}".format(info[0], info[1], info[2])
     return message
@@ -53,4 +53,4 @@ if __name__ == '__main__':
     write_to_file(inf)
     if os.path.isfile("Ch #1 - Dustin.txt"):
         read_from_file("Ch #1 - Dustin.txt")
-        file_cleanup()
+        # file_cleanup()

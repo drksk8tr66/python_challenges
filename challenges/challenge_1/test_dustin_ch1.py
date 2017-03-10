@@ -19,6 +19,11 @@ class MyTestCase(TestCase):
         params = ['Dustin', '30', 'dust7667']
         self.assertEqual(gather_info(name=params[0], age=params[1], username=params[2]), ['Dustin', '30', 'dust7667'])
 
+    def test_gather_injection_info(self):
+        params = [eval("print('hello world')"), 30, 'dust7667']
+        self.assertEqual(gather_info(name=params[0], age=params[1], username=params[2]),
+                         ['hello world', 30, 'dust7667'])
+
     def test_gather_wrongType_info(self):
         params = [30, 'Dustin', True]
         self.assertEqual(gather_info(name=params[0], age=params[1], username=params[2]), [30, 'Dustin', True])
@@ -26,6 +31,11 @@ class MyTestCase(TestCase):
     def test_print_basic_info(self):
         params = ['Dustin', 30, 'dust7667']
         ans = "Your name is {0}, you are {1} years old, and your username is {2}".format(params[0], params[1], params[2])
+        self.assertEqual(print_info(params), ans)
+
+    def test_print_not_enough_info(self):
+        params = ['Juan Jose', 30]
+        ans = "You have not supplied the correct type of info"
         self.assertEqual(print_info(params), ans)
 
     def test_print_no_info(self):
