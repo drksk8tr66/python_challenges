@@ -1,0 +1,7 @@
+
+Use the Input file to generate the Output file.
+
+-Each Field added to a Table will need to have an incrementing Port Number.
+-New Output file should be named "[User]_Output.dot" EX: Dustin_Output.dot
+
+Bonus Points for generating the Keys structure for matching Field names between Tables (Output.dot after line 114)

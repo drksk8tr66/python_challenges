@@ -1,0 +1,93 @@
+Table: Accounts
+Field: _Account_Type_Month_Key
+Field: _Account_Type_Team_Month_Key
+Field: Account Number
+Field: Account Type
+Field: Year Month
+Field: Core Account
+Field: DDI
+Field: Account Name
+Field: Account Created DateTime
+Field: Account Tenure Days
+Field: Account Tier
+Field: Account Status
+Field: Account Bucket
+Field: Account Service Level
+Field: Account Current Month Flag
+Table: Assigned_Rackers
+Field: _Account_Type_Month_Key
+Field: _Racker_SSO_Month_Key
+Field: Assigned Racker Role
+Field: Assigned Racker SSO
+Field: Assigned Racker Current Month Flag
+Field: Assigned Racker Source
+Table: Customer_Contacts
+Field: _Account_Type_Month_Key
+Field: Contact Type
+Field: Contact Role
+Field: Contact Full Name
+Field: Contact Email
+Field: Contact Phone
+Field: Contact Country
+Field: Contact State
+Field: Contact City
+Field: Contact Postal Code
+Field: Contact Street
+Field: Contact Source
+Table: Accounts_Teams
+Field: _Account_Type_Team_Month_Key
+Field: Account Support Country
+Field: Account Support Super Region
+Field: Account Support Region
+Field: Account Support Sub Region
+Field: Account Support Business Unit
+Field: Account Support Segment
+Field: Account Support Sub Segment
+Field: Account Support Team
+Field: Account Support Sub Team
+Table: Cost_Centers_Hierarchy
+Field: _Cost_Center_Month_Key
+Field: Cost Center
+Field: Cost Center Depth
+Field: Cost Center Hierarchy
+Table: NPS
+Field: _NPS_Contact_Key
+Field: Contact Email
+Field: NPS Year Month
+Field: Campaign ID
+Field: Campaign Name
+Field: Campaign Type ID
+Field: Campaign Type Name
+Field: Campaign Start Date
+Field: Campaign End Date
+Field: Survey Sent Date
+Field: Survey Response Date
+Field: Survey Score
+Field: Survey Comment
+Field: Survey Status
+Field: Survey Response ID
+Field: Source System ID
+Field: Source System Name
+Field: Source System Type ID
+Field: Issue ID
+Table: Rackers
+Field: _Racker_SSO_Month_Key
+Field: _Cost_Center_Month_Key
+Field: Racker SSO
+Field: Year Month
+Field: Racker Employee ID
+Field: Racker Name
+Field: Racker Job Profile
+Field: Racker Tenure In Role Months
+Field: Racker Email
+Field: Racker Company
+Field: Racker Management Level
+Field: Racker Worker Type
+Field: Racker Work Shift
+Field: Racker Location
+Field: Racker Current Month Flag
+Table: Rackers_Hierarchy
+Field: _Racker_SSO_Month_Key
+Field: Manager Name
+Field: Racker Depth
+Field: Racker Hierarchy

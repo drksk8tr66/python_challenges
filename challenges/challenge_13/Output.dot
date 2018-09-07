@@ -1,0 +1,122 @@
+digraph G {
+graph [rankdir=LR, ranksep=2, pad="0.5", nodesep="0.5"];
+node [shape=rectangle];
+Accounts [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>Accounts</b></i></td></tr><hr/>
+                            <tr><td port="1">_Account_Type_Month_Key</td></tr>
+                            <tr><td port="2">_Account_Type_Team_Month_Key</td></tr>
+                            <tr><td port="3">Account Number</td></tr>
+                            <tr><td port="4">Account Type</td></tr>
+                            <tr><td port="5">Year Month</td></tr>
+                            <tr><td port="6">Core Account</td></tr>
+                            <tr><td port="7">DDI</td></tr>
+                            <tr><td port="8">Account Name</td></tr>
+                            <tr><td port="9">Account Created DateTime</td></tr>
+                            <tr><td port="10">Account Tenure Days</td></tr>
+                            <tr><td port="11">Account Tier</td></tr>
+                            <tr><td port="12">Account Status</td></tr>
+                            <tr><td port="13">Account Bucket</td></tr>
+                            <tr><td port="14">Account Service Level</td></tr>
+                            <tr><td port="15">Account Current Month Flag</td></tr>
+                        </table>>];
+Assigned_Rackers [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>Assigned_Rackers</b></i></td></tr><hr/>
+                            <tr><td port="1">_Account_Type_Month_Key</td></tr>
+                            <tr><td port="2">_Racker_SSO_Month_Key</td></tr>
+                            <tr><td port="3">Assigned Racker Role</td></tr>
+                            <tr><td port="4">Assigned Racker SSO</td></tr>
+                            <tr><td port="5">Assigned Racker Current Month Flag</td></tr>
+                            <tr><td port="6">Assigned Racker Source</td></tr>
+                        </table>>];
+Customer_Contacts [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>Customer_Contacts</b></i></td></tr><hr/>
+                            <tr><td port="1">_Account_Type_Month_Key</td></tr>
+                            <tr><td port="2">Contact Type</td></tr>
+                            <tr><td port="3">Contact Role</td></tr>
+                            <tr><td port="4">Contact Full Name</td></tr>
+                            <tr><td port="5">Contact Email</td></tr>
+                            <tr><td port="6">Contact Phone</td></tr>
+                            <tr><td port="7">Contact Country</td></tr>
+                            <tr><td port="8">Contact State</td></tr>
+                            <tr><td port="9">Contact City</td></tr>
+                            <tr><td port="10">Contact Postal Code</td></tr>
+                            <tr><td port="11">Contact Street</td></tr>
+                            <tr><td port="12">Contact Source</td></tr>
+                        </table>>];
+Accounts_Teams [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>Accounts_Teams</b></i></td></tr><hr/>
+                            <tr><td port="1">_Account_Type_Team_Month_Key</td></tr>
+                            <tr><td port="2">Account Support Country</td></tr>
+                            <tr><td port="3">Account Support Super Region</td></tr>
+                            <tr><td port="4">Account Support Region</td></tr>
+                            <tr><td port="5">Account Support Sub Region</td></tr>
+                            <tr><td port="6">Account Support Business Unit</td></tr>
+                            <tr><td port="7">Account Support Segment</td></tr>
+                            <tr><td port="8">Account Support Sub Segment</td></tr>
+                            <tr><td port="9">Account Support Team</td></tr>
+                            <tr><td port="10">Account Support Sub Team</td></tr>
+                        </table>>];
+Cost_Centers_Hierarchy [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>Cost_Centers_Hierarchy</b></i></td></tr><hr/>
+                            <tr><td port="1">_Cost_Center_Month_Key</td></tr>
+                            <tr><td port="2">Cost Center</td></tr>
+                            <tr><td port="3">Cost Center Depth</td></tr>
+                            <tr><td port="4">Cost Center Hierarchy</td></tr>
+                        </table>>];
+NPS [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>NPS</b></i></td></tr><hr/>
+                            <tr><td port="1">_NPS_Contact_Key</td></tr>
+                            <tr><td port="2">Contact Email</td></tr>
+                            <tr><td port="3">NPS Year Month</td></tr>
+                            <tr><td port="4">Campaign ID</td></tr>
+                            <tr><td port="5">Campaign Name</td></tr>
+                            <tr><td port="6">Campaign Type ID</td></tr>
+                            <tr><td port="7">Campaign Type Name</td></tr>
+                            <tr><td port="8">Campaign Start Date</td></tr>
+                            <tr><td port="9">Campaign End Date</td></tr>
+                            <tr><td port="10">Survey Sent Date</td></tr>
+                            <tr><td port="11">Survey Response Date</td></tr>
+                            <tr><td port="12">Survey Score</td></tr>
+                            <tr><td port="13">Survey Comment</td></tr>
+                            <tr><td port="14">Survey Status</td></tr>
+                            <tr><td port="15">Survey Response ID</td></tr>
+                            <tr><td port="16">Source System ID</td></tr>
+                            <tr><td port="17">Source System Name</td></tr>
+                            <tr><td port="18">Source System Type ID</td></tr>
+                            <tr><td port="19">Issue ID</td></tr>
+                        </table>>];
+Rackers [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>Rackers</b></i></td></tr><hr/>
+                            <tr><td port="1">_Racker_SSO_Month_Key</td></tr>
+                            <tr><td port="2">_Cost_Center_Month_Key</td></tr>
+                            <tr><td port="3">Racker SSO</td></tr>
+                            <tr><td port="4">Year Month</td></tr>
+                            <tr><td port="5">Racker Employee ID</td></tr>
+                            <tr><td port="6">Racker Name</td></tr>
+                            <tr><td port="7">Racker Job Profile</td></tr>
+                            <tr><td port="8">Racker Tenure In Role Months</td></tr>
+                            <tr><td port="9">Racker Email</td></tr>
+                            <tr><td port="10">Racker Company</td></tr>
+                            <tr><td port="11">Racker Management Level</td></tr>
+                            <tr><td port="12">Racker Worker Type</td></tr>
+                            <tr><td port="13">Racker Work Shift</td></tr>
+                            <tr><td port="14">Racker Location</td></tr>
+                            <tr><td port="15">Racker Current Month Flag</td></tr>
+                        </table>>];
+Rackers_Hierarchy [label=<<table border="0" cellborder="0" cellspacing="0">
+                            <tr><td><i><b>Rackers_Hierarchy</b></i></td></tr><hr/>
+                            <tr><td port="1">_Racker_SSO_Month_Key</td></tr>
+                            <tr><td port="2">Manager Name</td></tr>
+                            <tr><td port="3">Racker Depth</td></tr>
+                            <tr><td port="4">Racker Hierarchy</td></tr>
+                        </table>>];
+
+# week-2
+Accounts:1 -> Customer_Contacts:1;
+Accounts:2 -> Accounts_Teams:1;
+Accounts:1 -> Assigned_Rackers:1;
+Assigned_Rackers:2 -> Rackers:1;
+Rackers:1 -> Rackers_Hierarchy:1;
+Rackers:2 -> Cost_Centers_Hierarchy:1;
+Customer_Contacts:5 -> NPS:2;
+}
