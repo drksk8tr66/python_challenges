@@ -25,6 +25,7 @@ class Tables:
             if k == 'Table':
                 # when table is found, add the list of fields to the dict, reset list of fields and table name
                 if l and t:
+                    # last table not being added - BUG
                     self.data[t] = l
                     l = []
                 t = v.strip('\n').strip(' ')
@@ -45,6 +46,7 @@ class Tables:
             self.html += '</table>>]; \n'
 
     def generate_connections(self):
+        # solve for multiple connections - BUG
         # iterate through the data to find matching fields
         if not self.data:
             self.input_data()
