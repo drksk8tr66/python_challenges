@@ -1,0 +1,18 @@
+For this challenge, we will be working with some Rackspace Internal Systems.
+Our goal is to first obtain a token from Rackspace Identity to be used in later API calls to our various systems.
+You will be using this code to auth against different RS systems in later challenges.
+
+We will need to store the Token ID and the Token Expiration Date for use later on while not publishing any credentials.
+
+
+We will obtain a token from the following URL.
+'https://identity-internal.api.rackspacecloud.com/v2.0/tokens'
+The preferred module for making these API calls is the 'requests' module.
+Use the .gitignore file to ignore any files that have your credentials in them from being pushed up to GitHub.
+Example File: bitools/bitools/tokens.py
+
+Things to keep in mind:
+Security
+Security
+SECURITY!
+Anyone who pushes their credentials to GitHub fails instantly and will be asked to buy drinks for everyone!

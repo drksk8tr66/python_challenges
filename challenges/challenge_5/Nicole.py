@@ -47,7 +47,8 @@ def main():
     # Calling the function to calculate pi and displaying the results
     print('Here is pi rounded to %s decimal digits:' % num_digits)
     print(chudnovsky(iterations, num_digits))
+    return chudnovsky(iterations, num_digits)
 
 
 if __name__ == "__main__":
-    main()
+    a = main()

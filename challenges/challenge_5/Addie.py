@@ -37,3 +37,4 @@ def calc(n):
 
 
 print(calc(n))
+print(len(str(calc(n))))
