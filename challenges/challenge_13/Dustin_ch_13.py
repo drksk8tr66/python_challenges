@@ -1,18 +1,21 @@
+#!/usr/bin/env python3
 """
 This module will iterate through the Input.txt and render an output in the format of the Output.dot
 """
+from typing import List, Set, Dict, Tuple, Optional
+from copy import deepcopy
 
 
 class Tables:
     def __init__(self, name: str=None, f_name: str=None):
         self.name = name
-        self.data = {}
+        self.data: Dict[str, str] = {}
         self.f_name = f_name
         self.head = 'digraph G {\n' \
-                    'graph [rankdir=LR, ranksep=2, pad="0.5", nodesep="0.5"];\n' \
-                    'node [shape=rectangle];'
+                    'graph [rankdir=LR, ranksep=2, pad="0.5", nodesep="0.5"];'\
+                    '\nnode [shape=rectangle];'
         self.html = None
-        self.conns = {}
+        self.conns: Dict[str, str] = {}
 
     def input_data(self):
         # reads input file to parse tables and fields into data structure
@@ -50,7 +53,13 @@ class Tables:
         # iterate through the data to find matching fields
         if not self.data:
             self.input_data()
+        table_dat = self.data.items()
+        working = deepcopy(self.data)
+        table = working.popitem()
+        match_gen = (field for field in table  if field in working.values())
+        breakpoint()
         for table in self.data:
+            # gen = (field for field in self.data['Accounts'] if field in self.data['Assigned_Rackers'])
             f = 1
             for field in self.data[table]:
                 for table2 in self.data:
