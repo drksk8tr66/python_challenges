@@ -9,18 +9,23 @@ accessed later.
 from string import Template
 from pathlib import Path
 
+
 def challenge1():
+    """Get input and create output string."""
     name = input("Enter your name: ")
     age = input("Enter your age: ")
     username = input("Enter your username: ")
+    return Template(
+        "Your name is $name, you are $age years old, and your username is "
+        "$username.").safe_substitute(locals())
 
-    return Template("Your name is $name, you are $age years old,"
-                   "and your username is $username.\n").safe_substitute(locals())
 
 def do_output(string_to_use):
+    """Print and write to file."""
     print(string_to_use)
-    Path('./Ryan.txt').write_text(challenge_output)
+    Path('./Ryan.txt').write_text('{0}\n'.format(string_to_use))
+
 
 if __name__ == '__main__':
-    challenge_output = challenge1()
-    do_output(challenge_output)
+    CHALLENGE_OUTPUT = challenge1()
+    do_output(CHALLENGE_OUTPUT)
