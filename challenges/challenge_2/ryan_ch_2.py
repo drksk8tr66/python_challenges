@@ -18,7 +18,7 @@ def calc_what():
     choices = {'f': 'Force', 'm': 'Mass', 'a': 'Acceleration'}
     what = input(
         'Which would you like to calculate? (F)orce, (M)ass, or (A)cceleration'
-        '\nEnter the letter in parenthesise: ')
+        '\nEnter the letter in parenthesis: ')
     try:
         solve_for = choices.pop(what.lower())
     except KeyError:
