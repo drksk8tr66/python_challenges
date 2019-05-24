@@ -48,22 +48,19 @@ from pathlib import Path
 
 CIPHER = bytearray("YPLTAVKREZGMSHUBXNCDIJFQOW", 'ascii')
 CIPHER[0:0] = CIPHER.lower()
-
-CRYPT = bytes.maketrans(bytes(ascii_letters, 'ascii'), CIPHER)
-UNCRYPT = bytes.maketrans(CIPHER, bytes(ascii_letters, 'ascii'))
+ASCII_BARRAY = bytearray(ascii_letters, 'ascii')
 
 
-def crypt(message, uncrypt=False):
+def crypt(from_group, to_group, message):
     """Encrypt message with cypher, or decrypt"""
     if isinstance(message, str):
         message = bytes(message, 'ascii')
-    if uncrypt:
-        return bytes.decode(message.translate(UNCRYPT), 'ascii')
-    return bytes.decode(message.translate(CRYPT), 'ascii')
+    trans = bytes.maketrans(from_group, to_group)
+    return bytes.decode(message.translate(trans), 'ascii')
 
 
-ENCRYPT = partial(crypt, uncrypt=False)
-DECRYPT = partial(crypt, uncrypt=True)
+ENCRYPT = partial(crypt, ASCII_BARRAY, CIPHER)
+DECRYPT = partial(crypt, CIPHER, ASCII_BARRAY)
 
 
 if __name__ == '__main__':
