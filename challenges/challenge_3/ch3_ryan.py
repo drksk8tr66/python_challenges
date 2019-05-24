@@ -55,6 +55,8 @@ UNCRYPT = bytes.maketrans(CIPHER, bytes(ascii_letters, 'ascii'))
 
 def crypt(message, uncrypt=False):
     """Encrypt message with cypher, or decrypt"""
+    if isinstance(message, str):
+        message = bytes(message, 'ascii')
     if uncrypt:
         return bytes.decode(message.translate(UNCRYPT), 'ascii')
     return bytes.decode(message.translate(CRYPT), 'ascii')
