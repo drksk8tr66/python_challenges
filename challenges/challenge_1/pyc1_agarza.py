@@ -8,8 +8,10 @@ unm = input('Please ente your username:')
 n_string = 'Your name is %s.  Your age is %s.  Your username is %s.\n' % (nm, age, unm)
 print(n_string)
 
+# if the log files already exists, append to the list
+# otherwirse write new
 if os.path.exists('name_log.txt'):
-	write_mode = 'a'
+	write_mode = 'a'	
 else: 
 	write_mode = 'w'
 
