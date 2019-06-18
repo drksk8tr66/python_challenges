@@ -4,8 +4,7 @@ def get_name():
         n = input("What is your name?")
         if n.isalpha():
             break
-        if n.isdigit() or n.isalnum():
-            print("That doesn't seem like a name. Please enter your name.")
+        print("That doesn't seem like a name. Please enter your name.")
     return n
 
 
@@ -14,8 +13,7 @@ def get_age():
         a = input("How old are you?")
         if a.isdigit():
             break
-        if a.isalpha() or a.isalnum():
-            print("That doesn't seem like a number. Please enter your age.")
+        print("That doesn't seem like a number. Please enter your age.")
     return a
 
 
@@ -23,9 +21,7 @@ def get_user():
     while True:
         u = input("What is your username?")
         if sum(c.isalpha() for c in u) == 4 and sum(c.isdigit() for c in u) == 4:
-            break
-        else:
-            print("That doesn't seem like a username. Please enter your username.")
+         print("That doesn't seem like a username. Please enter your username.")
     return u
 
 
