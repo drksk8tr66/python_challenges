@@ -54,3 +54,5 @@ def calc_param(n, var1, var2):
 calctype = calc_type()
 v1, v2 = get_param(calctype)
 calc_param(calctype, v1, v2)
+
+# use .lower/.upper
