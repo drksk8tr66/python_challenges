@@ -1,0 +1,4 @@
+Primality Testing
+This challenge will require a script that will accept an integer and output if it is a Prime Number or not.
+
+Bonus points for outputting composite numbers factors.
