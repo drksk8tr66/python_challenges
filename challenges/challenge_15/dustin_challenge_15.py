@@ -16,8 +16,8 @@ def divide(num=8675309):
         i += 1
     if not factors:
         factors = "{0} is a Prime Number".format(num)
-    return "Factors of {0}".format(num), factors
+    return "Factors of {0} = {1}".format(num, factors)
 
 
 if __name__ == '__main__':
-    print(divide())
+    print(divide(9008773))
