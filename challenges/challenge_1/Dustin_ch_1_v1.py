@@ -12,4 +12,4 @@ age = input("What is your age?")
 username = input("What is your username?")
 
 
-print("Your name is {}, you are {} years old, and your username is {}".format(name, age, username))
+print("Your name is {0}, you are {1} years old, and your username is {2}".format(name, age, username))

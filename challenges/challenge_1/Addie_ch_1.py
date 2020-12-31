@@ -21,7 +21,7 @@ def get_user():
     while True:
         u = input("What is your username?")
         if sum(c.isalpha() for c in u) == 4 and sum(c.isdigit() for c in u) == 4:
-         print("That doesn't seem like a username. Please enter your username.")
+            print("That doesn't seem like a username. Please enter your username.")
     return u
 
 
